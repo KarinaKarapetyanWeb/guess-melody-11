@@ -33,10 +33,11 @@ jobs:
         run: |
           npm i
           npm run build
+        working-directory: project
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./project
+          source: ./
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
